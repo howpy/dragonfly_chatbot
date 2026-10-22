@@ -2,5 +2,5 @@ url: https://github.com/howpy/dragonfly_chatbot
 name: howpy/dragonfly_chatbot
 category: tools
 description:
-  en: 'Searches bundled Prototype Apps manuals and locally imported Dragonfly documentation or Python source with version filters and source citations.'
-  zh: '检索内置 Prototype Apps 手册及本地导入的 Dragonfly 文档或 Python 源码，提供版本筛选和来源引用。'
+  en: 'Dragonfly 3D World technical support with versioned official help and read-only searches of a detected local installation. Help-only fallback when Dragonfly is absent.'
+  zh: '基于官方帮助文档与本机 Dragonfly 安装源码的版本化技术支持，未安装时明确使用仅帮助文档模式。'

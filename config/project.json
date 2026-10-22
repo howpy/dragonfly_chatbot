@@ -1,15 +1,7 @@
 {
   "name": "dragonfly_chatbot",
-  "stage": "released_pending_marketplace_submission",
-  "target_host": "DeepSeek Harness",
-  "target_marketplace": "https://dshmarket.com/",
-  "purpose": "基于 Dragonfly 技术资料和经确认的开放源码，提供带引用的中英文技术问答。",
-  "languages": ["zh-CN", "en"],
-  "planned_dragonfly_versions": ["2025.1", "2027.1"],
-  "harness_compatibility": "0.2.1-rc.2",
-  "marketplace_published": false,
-  "public_repository": "https://github.com/howpy/dragonfly_chatbot",
-  "release_url": "https://github.com/howpy/dragonfly_chatbot/releases/tag/v0.1.0",
-  "listing_pr": null,
-  "configuration_status": "project_metadata_actual_bundle_is_in_package_json"
+  "product": "Dragonfly 3D World",
+  "version": "0.2.0",
+  "bundled_evidence": "official_help_only",
+  "source_policy": "read_only_local_installation"
 }

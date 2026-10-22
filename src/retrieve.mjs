@@ -67,7 +67,7 @@ export class KnowledgeIndex {
     if (typeof query !== 'string' || !query.trim() || query.length > 1000) throw new Error('query must contain 1–1000 characters');
     if (!Number.isInteger(limit) || limit < 1 || limit > 20) throw new Error('limit must be an integer from 1 to 20');
     if (version !== undefined && (typeof version !== 'string' || version.length > 40)) throw new Error('Invalid version');
-    if (kind !== undefined && !['help', 'source_code', 'plugin_manual', 'technical_note'].includes(kind)) throw new Error('Invalid kind');
+    if (kind !== undefined && !['help', 'source_code'].includes(kind)) throw new Error('Invalid kind');
     const terms = [...new Set(tokenize(expandQuery(query)))];
     const exactTerms = [...new Set(tokenize(query).filter(x => /^[a-z_]/.test(x)))];
     const hits = [];

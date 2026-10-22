@@ -4,17 +4,22 @@ import { writeFileSync, renameSync, existsSync, unlinkSync, mkdirSync } from 'no
 import { resolve, dirname } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { importDirectory, loadCorpus, validateDocuments, MAX_INDEX_BYTES } from '../src/corpus.mjs';
+import { detectEnvironment } from '../src/environment.mjs';
+import { loadBundledHelp } from '../src/corpus.mjs';
+import { LocalSourceSearch } from '../src/local-source.mjs';
 import { KnowledgeIndex } from '../src/retrieve.mjs';
 
-const usage = `dragonfly-chatbot import --root PATH --source-id ID --version VERSION --kind help|source_code|plugin_manual|technical_note --out FILE [--force]
-dragonfly-chatbot search --corpus FILE --query TEXT [--version VERSION]
-dragonfly-chatbot status --corpus FILE
+const usage = `dragonfly-chatbot doctor [--dragonfly-path PATH]
+dragonfly-chatbot search --query TEXT [--version VERSION] [--corpus FILE]
+dragonfly-chatbot source --query TEXT [--version VERSION] [--dragonfly-path PATH]
+dragonfly-chatbot status [--corpus FILE]
+dragonfly-chatbot import --root HELP_PATH --source-id ID --version VERSION --kind help --out FILE [--force]
 dragonfly-chatbot merge --corpus FILE --with FILE --out FILE [--force]
 
-Import only a documentation or Python source directory. Credentials/settings filenames,
-hidden folders, symlinks, datasets and build output are excluded. Review your source directory
-before import. HTML citations use extracted-text lines. Data stays local until evidence is
-provided to the model service configured in Harness. No Dragonfly process is started.`;
+Detection runs when the plugin loads; doctor runs the same checks manually.
+Only help documents can be exported. Official product Python is searched in place,
+never executed or copied into a corpus. Evidence sent to Harness enters the configured
+model context. No Dragonfly process is started.`;
 
 function save(path, data, force) {
   const target = resolve(path);
@@ -35,12 +40,19 @@ try {
   if (!command || ['--help', '-h', 'help'].includes(command)) { console.log(usage); }
   else {
     const {values} = parseArgs({args: process.argv.slice(3), options: {
-      root: {type: 'string'}, 'source-id': {type: 'string'}, version: {type: 'string'},
+      'dragonfly-path': {type: 'string'}, root: {type: 'string'}, 'source-id': {type: 'string'}, version: {type: 'string'},
       kind: {type: 'string'}, out: {type: 'string'}, force: {type: 'boolean'},
       corpus: {type: 'string'}, query: {type: 'string'}, with: {type: 'string'},
     }});
     const need = (...keys) => { for (const key of keys) if (!values[key]) throw new Error(`Missing --${key}`); };
-    if (command === 'import') {
+    if (command === 'doctor') {
+      console.log(JSON.stringify(detectEnvironment({dragonflyPath: values['dragonfly-path']}), null, 2));
+    } else if (command === 'source') {
+      need('query');
+      const environment = detectEnvironment({dragonflyPath: values['dragonfly-path']});
+      const result = new LocalSourceSearch(environment.installations).search({query: values.query, version: values.version || environment.default_version || undefined});
+      console.log(JSON.stringify({...result, mode: environment.mode, notice: environment.notice}, null, 2));
+    } else if (command === 'import') {
       need('root', 'source-id', 'version', 'kind', 'out');
       const corpus = importDirectory({root: values.root, sourceId: values['source-id'], version: values.version, kind: values.kind});
       if (!corpus.documents.length) throw new Error('No readable documents found; no output written');
@@ -51,8 +63,7 @@ try {
       const documents = validateDocuments([...loadCorpus(values.corpus), ...loadCorpus(values.with)]);
       console.log(JSON.stringify({documents: documents.length, output: save(values.out, {schema_version: 1, documents}, values.force)}));
     } else if (command === 'search' || command === 'status') {
-      need('corpus');
-      const documents = loadCorpus(values.corpus);
+      const documents = values.corpus ? loadCorpus(values.corpus) : loadBundledHelp();
       const index = new KnowledgeIndex(documents);
       if (command === 'search') { need('query'); console.log(JSON.stringify(index.search({query: values.query, version: values.version}), null, 2)); }
       else console.log(JSON.stringify({documents: documents.length, chunks: index.chunks.length, versions: [...new Set(documents.map(d => d.version))]}, null, 2));

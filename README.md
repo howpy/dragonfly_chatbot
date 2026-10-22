@@ -1,117 +1,81 @@
 # dragonfly_chatbot
 
-Dragonfly technical knowledge tools for **DeepSeek Harness**. Search bundled
-Prototype Apps extension manuals, then add authorized local Dragonfly Help and
-Python source. Answers can cite versioned evidence IDs and source line locations.
-
-[中文说明](README.zh-CN.md) · [Changelog](CHANGELOG.md) · [Data handling](NOTICE.md)
+An independent DeepSeek Harness support agent for **Dragonfly 3D World** built-in
+features. It searches official help and, when available, official Python files in the
+user's own Dragonfly installation. It does not claim vendor endorsement.
 
 ## Install
 
-Tested with **DeepSeek Harness 0.2.1-rc.2** and Node **22.23.3**. Requires Node
-22.19.0 or newer; this release declares an exact Harness compatibility version.
-No build step, Python environment, Ollama or Dragonfly shutdown is required.
+Requires Node.js >=22.19 and DeepSeek Harness 0.2.1-rc.2.
 
 ```sh
-dsh plugin --profile web add github:howpy/dragonfly_chatbot#v0.1.0
+dsh plugin add github:howpy/dragonfly_chatbot#v0.2.0
 ```
 
-Reload/restart the web profile after installation. In a Desktop-managed profile,
-install using the app's plugin manager; the CLI web profile is separate.
-This plugin has no custom browser panel.
+At first activation the agent checks the computer for Dragonfly. Windows discovery
+checks uninstall registry entries, standard installation locations, product folders
+at drive roots and PATH. DRAGONFLY_ROOT / DRAGONFLY_HOME and the `dragonflyPath`
+configuration field support custom locations. Detection validates the executable and
+product directory structure; it never launches Dragonfly or scans entire drives.
+Linux/macOS location discovery is best effort and has not been tested on those systems.
 
-Ask: **“Use dragonfly_chatbot to find which Prototype Apps tool measures mesh
-surface area. Read and cite its manual.”** Or **“查询网格整体测量功能，并引用依据。”**
+**No Dragonfly found:** help-only mode remains fully usable. The agent states this
+in its first Dragonfly answer and every tool response. Run `dragonfly-chatbot doctor`
+for a direct report. Reload the plugin after installing Dragonfly or changing paths.
 
-Includes **162 first-party manual documents from 112 Prototype Apps extensions**
-and three original engineering notes. It does not bundle proprietary Dragonfly Help
-or installed Python source. Extensions are distinct from stock Dragonfly features.
+**Dragonfly found:** help search defaults to its detected version; official Python
+source is searched in place only when the source tool is called. Multiple versions
+remain separate. Unknown or unsupported versions are reported without silently
+substituting documentation. You may explicitly request another documented version.
 
-## Tools
+## Evidence and data
 
-| Tool | Purpose |
-| --- | --- |
-| `search_dragonfly_knowledge` | BM25, Chinese aliases, exact API/title terms and strict version/kind filters |
-| `read_dragonfly_evidence` | Read a result by evidence ID, with bounded text and citation coordinates |
-| `get_dragonfly_corpus_status` | Inspect source kinds, versions and counts |
+The package contains 525 English help pages for Dragonfly 2027.1.
+Chinese queries use bilingual term expansion; answers can be in either language.
+Help citations refer to extracted text lines, not original HTML line numbers.
+Official notices are retained. See [NOTICE.md](NOTICE.md).
 
-The plugin adds Dragonfly-specific guidance to the normal Harness prompt. It does
-not replace the complete prompt or disable unrelated host tools. Retrieval is lexical:
-there are no embeddings or reranker. Arbitrary cross-language paraphrases may not
-match. No end-to-end LLM answer accuracy is claimed; the selected LLM affects query
-formulation, evidence use and final answers. Identical explicit tool queries against
-the same corpus return the same evidence independently of the chat model.
+No Dragonfly implementation source, binaries, user extensions or installed Python
+packages are distributed. Only the agent's own code and extracted help text ship.
+Local source is read from `python/OrsPythonPlugins`, `ORSServiceClass`, `OrsHelpers`,
+`OrsLibraries` and `ORSModel`; no persistent source index or source export is created.
+Files outside these roots, symlinks, settings and credentials are excluded. Compiled
+implementations cannot be inspected. Searches have file/byte budgets and report when
+truncated; no hit is not proof that an API does not exist.
 
-## Add local Help or Python source
+Evidence returned to Harness enters the configured model context and may be sent to
+its model provider. Retrieval is deterministic; answer quality also depends on the LLM.
 
-Clone this repository and install its schema dependency to use the import CLI:
+## Tools and configuration
+
+- `search_dragonfly_knowledge`: version-filtered help search.
+- `search_dragonfly_source`: bounded read-only local Python search.
+- `read_dragonfly_evidence`: read an ID returned by either search.
+- `get_dragonfly_corpus_status`: environment, paths, versions and help coverage.
+
+Configuration: `dragonflyPath` (optional product root/executable), `helpCorpusFile`
+(optional additional help-only JSON), `maxResults` (1–20, default 8). Configure these
+on the `dragonfly-chatbot` row in your Harness profile.
 
 ```sh
-git clone https://github.com/howpy/dragonfly_chatbot.git
-cd dragonfly_chatbot
-npm ci --ignore-scripts
-node bin/dragonfly-chatbot.mjs --help
+dragonfly-chatbot doctor
+dragonfly-chatbot doctor --dragonfly-path "D:/Dragonfly2027.1"
+dragonfly-chatbot search --query "threshold segmentation" --version 2027.1
+dragonfly-chatbot source --query "Channel" --version 2027.1
 ```
 
-Use your actual documentation/source paths. These Windows paths are examples:
-
-```powershell
-node bin/dragonfly-chatbot.mjs import --root 'D:/DragonflyHelp' --source-id help_2027_1 --version 2027.1 --kind help --out 'D:/DragonflyKnowledge/help.json'
-node bin/dragonfly-chatbot.mjs import --root 'D:/Dragonfly/python/OrsPythonPlugins' --source-id python_2027_1 --version 2027.1 --kind source_code --out 'D:/DragonflyKnowledge/source.json'
-node bin/dragonfly-chatbot.mjs merge --corpus 'D:/DragonflyKnowledge/help.json' --with 'D:/DragonflyKnowledge/source.json' --out 'D:/DragonflyKnowledge/combined.json'
-node bin/dragonfly-chatbot.mjs search --corpus 'D:/DragonflyKnowledge/combined.json' --query 'getAllRepresentableInstances' --version 2027.1
-```
-
-Choose narrow documentation/source roots. Imports are capped at 32 MiB of source
-text, 10,000 eligible files, 2 MiB per file and 25 directory levels. Oversized files
-are reported as skipped. HTML references use **extracted text lines**. Python,
-Markdown, plain text and JSON retain source line coordinates.
-
-Set the plugin configuration in Harness, or put this override in the profile's
-`cordis.patch.yml`, replacing the example path:
-
-```yaml
-- id: dragonfly-chatbot
-  config:
-    corpusFile: 'D:/DragonflyKnowledge/combined.json'
-    includeManuals: true
-    maxResults: 8
-```
-
-Reload after a corpus update. Use the status tool to confirm loaded sources.
-Missing/invalid configured corpora fail loading clearly. Set `includeManuals: false`
-to omit extension manuals; the three starter notes remain.
-
-Strict version filters exclude other versions and unspecified-version sources.
-Bundled manuals have unspecified versions: search without a filter and check the
-text before making compatibility claims.
-
-## Privacy
-
-The plugin makes no network requests. Harness sends questions and retrieved text
-to its configured model service. Use a local model if evidence must stay on the
-machine. Do not import credentials, customer datasets or settings. See [NOTICE.md](NOTICE.md).
-
-## Remove / update
-
-```sh
-dsh plugin --profile web remove dsh-dragonfly-chatbot
-```
-
-Install a future release using its explicit tag. Removal preserves imported corpora.
+Extra 2027.1 help can be imported with `import --root HELP_PATH --source-id my_help
+--version 2027.1 --kind help --out help.json`. Product source and other help versions are rejected.
+Never publish a corpus containing locally installed product code.
 
 ## Development
 
+`npm ci`, `npm run check`, `npm pack`. Maintainers rebuild text assets with:
+
 ```sh
-npm ci --ignore-scripts
-npm run check
-npm pack --dry-run
+python scripts/build_help.py --source "2027.1=PATH/Help/Content"
 ```
 
-`scripts/verify-harness.mjs /path/to/official/runtime/node_modules` exercises the
-real Cordis/SystemPrompt/ToolRuntime registry, execution, prompt assembly and unload.
-See [verification](docs/verification.md).
-
-This repository is exported from DragonflyPrototypeLabs's
-`deepseek_harness_agent/dragonfly_chatbot` subproject. Only this subproject is public.
-The manual snapshot script requires the development checkout; users do not need it.
+Only HTML help body text is extracted; scripts, styles and product source are excluded.
+See [verification](docs/verification.md), [architecture](docs/architecture.md) and
+[marketplace status](docs/marketplace.md).

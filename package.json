@@ -1,23 +1,60 @@
 {
   "name": "dsh-dragonfly-chatbot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Version-aware local Dragonfly documentation and Python source search for DeepSeek Harness.",
   "type": "module",
   "main": "src/index.mjs",
-  "exports": {".": "./src/index.mjs", "./package.json": "./package.json"},
-  "bin": {"dragonfly-chatbot": "bin/dragonfly-chatbot.mjs"},
-  "files": ["src/", "bin/", "knowledge/", "prompts/agent.md", "docs/verification.md", "cordis.patch.yml", "README.md", "README.zh-CN.md", "LICENSE", "NOTICE.md", "CHANGELOG.md"],
+  "exports": {
+    ".": "./src/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dragonfly-chatbot": "bin/dragonfly-chatbot.mjs"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "knowledge/",
+    "prompts/agent.md",
+    "docs/verification.md",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "NOTICE.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/index.mjs && node --check src/corpus.mjs && node --check src/retrieve.mjs && node --check bin/dragonfly-chatbot.mjs && npm test",
+    "check": "node --check src/index.mjs && node --check src/corpus.mjs && node --check src/retrieve.mjs && node --check src/environment.mjs && node --check src/local-source.mjs && node --check bin/dragonfly-chatbot.mjs && npm test",
     "prepack": "npm run check"
   },
-  "engines": {"node": ">=22.19.0", "dsh": "0.2.1-rc.2"},
-  "dependencies": {"@deepseek-ai/schemastery": "^3.18.1"},
-  "dsh": {"bundle": {"patch": "./cordis.patch.yml"}},
-  "repository": {"type": "git", "url": "git+https://github.com/howpy/dragonfly_chatbot.git"},
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": "0.2.1-rc.2"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howpy/dragonfly_chatbot.git"
+  },
   "homepage": "https://github.com/howpy/dragonfly_chatbot#readme",
-  "bugs": {"url": "https://github.com/howpy/dragonfly_chatbot/issues"},
-  "keywords": ["dsh-plugin", "deepseek-harness", "dragonfly", "technical-support", "retrieval"],
+  "bugs": {
+    "url": "https://github.com/howpy/dragonfly_chatbot/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dragonfly",
+    "technical-support",
+    "retrieval"
+  ],
   "license": "MIT"
 }

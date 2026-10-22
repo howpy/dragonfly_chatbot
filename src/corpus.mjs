@@ -1,10 +1,11 @@
 import { readFileSync, lstatSync, readdirSync, realpathSync, statSync } from 'node:fs';
-import { resolve, relative, extname, basename, isAbsolute } from 'node:path';
+import { createHash } from 'node:crypto';
+import { resolve, relative, extname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const MAX_INDEX_BYTES = 64 * 1024 * 1024;
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
-const KINDS = new Set(['help', 'source_code', 'plugin_manual', 'technical_note']);
+const KINDS = new Set(['help']);
 const OMIT = /^(?:\.|__pycache__$|node_modules$|\.git$|logs?$|cache$|dist$|build$|backup$|settings$|input\d*$|output\d*$)/i;
 const PRIVATE = /(?:config|settings|credentials?|secrets?|tokens?|private|published_reports)/i;
 
@@ -20,6 +21,7 @@ export function validateDocuments(value) {
     if (isAbsolute(doc.path) || /^[a-z]:|^[/\\]/i.test(doc.path) || doc.path.split(/[/\\]/).includes('..')) throw new Error('Document path must be relative');
     if (doc.version !== null && (typeof doc.version !== 'string' || !doc.version.trim() || doc.version.length > 40)) throw new Error('Invalid document version');
     if (!KINDS.has(doc.kind)) throw new Error('Invalid document kind');
+    if (doc.version !== '2027.1') throw new Error('The help library accepts Dragonfly 2027.1 only');
     const key = JSON.stringify([doc.source_id, doc.path, doc.version]);
     if (ids.has(key)) throw new Error('Duplicate source/path/version');
     ids.add(key);
@@ -36,6 +38,23 @@ export function loadCorpus(path) {
   return validateDocuments(payload.documents);
 }
 
+export function loadBundledHelp() {
+  const base = new URL('../knowledge/', import.meta.url);
+  const manifest = JSON.parse(readFileSync(new URL('manifest.json', base), 'utf8'));
+  if (manifest.schema_version !== 1 || !Array.isArray(manifest.shards)) throw new Error('Invalid help manifest');
+  const documents = [];
+  for (const shard of manifest.shards) {
+    if (!/^help-[\d.]+-\d+\.json$/.test(shard.file)) throw new Error('Invalid help shard path');
+    const url = new URL(shard.file, base);
+    const bytes = readFileSync(url);
+    if (createHash('sha256').update(bytes).digest('hex') !== shard.sha256) throw new Error('Help integrity check failed');
+    const docs = loadCorpus(url);
+    if (docs.length !== shard.documents || docs.some(doc => doc.version !== shard.version)) throw new Error('Help manifest mismatch');
+    documents.push(...docs);
+  }
+  return validateDocuments(documents);
+}
+
 function htmlText(value) {
   return value.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
     .replace(/<(?:br|\/p|\/div|\/h[1-6]|\/li|\/tr)\b[^>]*>/gi, '\n')
@@ -48,7 +67,8 @@ function htmlText(value) {
 export function importDirectory({root, sourceId, version, kind, maxFiles = 10000}) {
   if (!/^[a-zA-Z0-9_-]+$/.test(sourceId || '')) throw new Error('sourceId must contain letters, numbers, underscores or hyphens');
   if (typeof version !== 'string' || !version.trim() || version.length > 40) throw new Error('Explicit version is required');
-  if (!KINDS.has(kind)) throw new Error('Unknown source kind');
+  if (version !== '2027.1') throw new Error('The help library accepts Dragonfly 2027.1 only');
+  if (kind !== 'help') throw new Error('Only help documents may be imported. Product source must remain in the local installation.');
   const original = resolve(root);
   if (lstatSync(original).isSymbolicLink() || !statSync(original).isDirectory()) throw new Error('Root must be a real directory');
   const base = realpathSync(original);
@@ -56,7 +76,7 @@ export function importDirectory({root, sourceId, version, kind, maxFiles = 10000
   const skipped = [];
   let totalBytes = 0;
   let visitedFiles = 0;
-  const allowed = kind === 'source_code' ? new Set(['.py']) : new Set(['.md', '.txt', '.html', '.htm', '.json']);
+  const allowed = new Set(['.md', '.txt', '.html', '.htm']);
   function walk(directory, depth) {
     if (depth > 25) throw new Error('Source directory depth exceeds 25');
     for (const entry of readdirSync(directory, {withFileTypes: true}).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -66,7 +86,6 @@ export function importDirectory({root, sourceId, version, kind, maxFiles = 10000
       if (relative(base, realpathSync(path)).split(/[/\\]/).includes('..')) throw new Error('Source escapes root');
       if (entry.isDirectory()) { walk(path, depth + 1); continue; }
       if (!entry.isFile() || !allowed.has(extname(entry.name).toLowerCase()) || PRIVATE.test(entry.name)) continue;
-      if (kind === 'plugin_manual' && !['manual.json', 'manual_content.json'].includes(basename(path))) continue;
       if (++visitedFiles > maxFiles) throw new Error('Source file count exceeds limit; choose a narrower directory');
       const size = statSync(path).size;
       if (size > MAX_FILE_BYTES) { skipped.push({path: rel, reason: 'exceeds 2 MiB'}); continue; }

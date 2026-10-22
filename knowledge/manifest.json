@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "description": "Official Dragonfly 3D World help text; no product implementation files.",
+  "shards": [
+    {
+      "file": "help-2027.1-00.json",
+      "version": "2027.1",
+      "documents": 189,
+      "sha256": "167bcf18b5b159dc5097729d4c004aee60470b682c76b6655e8926925c92ad93"
+    },
+    {
+      "file": "help-2027.1-01.json",
+      "version": "2027.1",
+      "documents": 224,
+      "sha256": "cafe081cdb723285862c3de8ac856c2ba7e43c5296cd68811c9efbb4651211f2"
+    },
+    {
+      "file": "help-2027.1-02.json",
+      "version": "2027.1",
+      "documents": 112,
+      "sha256": "1661485823affd838ac53b44bd5c44b5031fe8b9ec5d15344a22cf1bba5d4ec3"
+    }
+  ]
+}
