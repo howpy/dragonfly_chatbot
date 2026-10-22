@@ -1,0 +1,655 @@
+{
+  "origin": "DragonflyPrototypeLabs first-party Prototype Apps manuals",
+  "policy_reference": "DragonflyPlugins/Chatbot-Plugin/build_bundled_corpus.py",
+  "version_policy": "Unspecified per-manual Dragonfly version; never assign a guessed version.",
+  "documents": [
+    {
+      "path": "DragonflyPlugins/Algotom-Plugin/manual.json",
+      "sha256": "0cc3066c9b291e3981dd07f6b03224ae3f5b6454d8f1ceb6ed23622bb0209f60"
+    },
+    {
+      "path": "DragonflyPlugins/Anomalib-Plugin/manual.json",
+      "sha256": "c2d8cc1174bd786234423122147f81ed974a2006b575c43777a517eb2fa3d99f"
+    },
+    {
+      "path": "DragonflyPlugins/AutoBackupExit-Plugin/manual.json",
+      "sha256": "2e3d945c070b8f2ca84279d331393589dd16f06940a5649a3a54e03fc4cb15ca"
+    },
+    {
+      "path": "DragonflyPlugins/AutoBackupExit-Plugin/manual_content.json",
+      "sha256": "abecdc487d13a48bf95253049f0202338f32315d7928af8630288302bcdf1960"
+    },
+    {
+      "path": "DragonflyPlugins/BigStitcher-Lite-Plugin/manual.json",
+      "sha256": "fa0eaee301b6d770de2cfb08339ab0c6ece065e16ab123dc25b0b6ced7290c94"
+    },
+    {
+      "path": "DragonflyPlugins/BioFormatsLoader-Plugin/manual.json",
+      "sha256": "326c091c209db2c01bbd33f9af555e5aa6a21992f446bfeac9e035a056c46ef2"
+    },
+    {
+      "path": "DragonflyPlugins/BounTI-Plugin/manual.json",
+      "sha256": "48fc3a42fe8b50ebfbad69b497fe1fbb9dd04e46e82798355098b98d61f59609"
+    },
+    {
+      "path": "DragonflyPlugins/BounTI-Plugin/manual_content.json",
+      "sha256": "ff058ca58e72c3fdcae84b611763ebc1f3becb31eeeec998cf16a94e8142fe66"
+    },
+    {
+      "path": "DragonflyPlugins/CAREamics-Plugin/manual.json",
+      "sha256": "591b3f083f37c422affc1aa5c44aa69b31bdcd4d6146e1e0079ac7004cf1e91e"
+    },
+    {
+      "path": "DragonflyPlugins/CellFocus-Plugin/manual.json",
+      "sha256": "9aca27cc8e59e1e533459f4170cf1332dd5154cd25bf04e69421e3c502e782b1"
+    },
+    {
+      "path": "DragonflyPlugins/CellFocus-Plugin/manual_content.json",
+      "sha256": "0fe7873347bbd0d7310fbf832b49dd8849a52b7a7fdaff750d2310933771afa5"
+    },
+    {
+      "path": "DragonflyPlugins/Cellpose-Plugin/manual.json",
+      "sha256": "a537b95d3f39bf073192ec0be744c15c8b562db7fb2be171f27748cc0f73e561"
+    },
+    {
+      "path": "DragonflyPlugins/CenterlineLengthV2-Plugin/manual.json",
+      "sha256": "bec2bfa95da9c49708e3464ab167d60f08dc9a1ca1bf809e3c39417eae13c346"
+    },
+    {
+      "path": "DragonflyPlugins/CenterlineLengthV2-Plugin/manual_content.json",
+      "sha256": "11c0d132ad2f317d6ed37fa2799e94027b7a75529584f4e68d566918a4664846"
+    },
+    {
+      "path": "DragonflyPlugins/CGAL-Mesh_3-Plugin/manual.json",
+      "sha256": "6473f536be6895e9173cbeacf41ef1513e8a74850f5696005d57d387554aefdc"
+    },
+    {
+      "path": "DragonflyPlugins/CloudCellpose-Plugin/manual.json",
+      "sha256": "fcfecffd63f9201c2aa96e9e299f3e28c05468065f8c1ba832d8d5dc9d45270e"
+    },
+    {
+      "path": "DragonflyPlugins/CloudCellpose-Plugin/manual_content.json",
+      "sha256": "31a052e21047000a77f8399b736037172fb95bd01fecba77e510d0f8efe8594b"
+    },
+    {
+      "path": "DragonflyPlugins/ClustersPlotter-Plugin/manual.json",
+      "sha256": "a5e4723703175ab7df87615ff0bb7de30a6df98e41780e2a34850f8b902377a3"
+    },
+    {
+      "path": "DragonflyPlugins/COLMAP-Plugin/manual.json",
+      "sha256": "6dbe481567be1ec7e0ac5c958d6846ee8486d3c5971835f672c6daaf62cfb226"
+    },
+    {
+      "path": "DragonflyPlugins/ColorImageProcessing-Plugin/manual.json",
+      "sha256": "3737c08f188eee7d5c9deeaeb952f5c253c02d6fc246e6b84b3e2131ef059073"
+    },
+    {
+      "path": "DragonflyPlugins/ColorImageProcessing-Plugin/manual_content.json",
+      "sha256": "10614a3ccc9294c109041f8589fbab6e805007919d53bffc96e67301ae4a7327"
+    },
+    {
+      "path": "DragonflyPlugins/ComfyUI-Plugin/manual.json",
+      "sha256": "8736d696c3ffe4ac7979bfd8d023140378ea8f15297c07c5b774491abfad96ef"
+    },
+    {
+      "path": "DragonflyPlugins/ContactAreaAnalysis-Plugin/manual.json",
+      "sha256": "92da6cb83554291ab6cd8184ce82dbd2eb08ae53f6796263ab824a62540b9d4a"
+    },
+    {
+      "path": "DragonflyPlugins/ContactAreaAnalysis-Plugin/manual_content.json",
+      "sha256": "bbba0492152f4b867d34849d7dc2fa1070b416342dedfbdf50902ba71c0833c3"
+    },
+    {
+      "path": "DragonflyPlugins/CPCColoc-Plugin/manual.json",
+      "sha256": "26ec4736c0b413a653246001e8c47cf13c5db13b39a38f87ca5f6a22d4149aa4"
+    },
+    {
+      "path": "DragonflyPlugins/CPCColoc-Plugin/manual_content.json",
+      "sha256": "76ca4bc432904617e7541f4fb564725565edb6cd2bec2b4cb3f427d80a807346"
+    },
+    {
+      "path": "DragonflyPlugins/CreateSyntheticCAD-Plugin/manual.json",
+      "sha256": "fdc2fe6ba07a41ad1a45613f66caf54bdd28aa1aa19e9d3a9ee177ea1b64cc67"
+    },
+    {
+      "path": "DragonflyPlugins/CreateSyntheticCAD-Plugin/manual_content.json",
+      "sha256": "dd9633d5541e1b03e3c13f2bac5ec5319622d77887773af62d231129fe9fc228"
+    },
+    {
+      "path": "DragonflyPlugins/CreateSyntheticImages-Plugin/manual.json",
+      "sha256": "3e13179db3ed600c5ca510d398a0dd35b344b5b5d6d404697f462435d1526d44"
+    },
+    {
+      "path": "DragonflyPlugins/CSBDeep-Plugin/manual.json",
+      "sha256": "32ab393faa098c75a3d5b07db3cf6df8370540b9032ac63f3953a0ad42a27e6e"
+    },
+    {
+      "path": "DragonflyPlugins/CTReconWorkshop-Plugin/manual.json",
+      "sha256": "d515eb4250e594a123fc33f6c38a5ba4c3668f3e50e938a4da40d9c295446c56"
+    },
+    {
+      "path": "DragonflyPlugins/CTReconWorkshop-Plugin/manual_content.json",
+      "sha256": "4fee24221c8dba2b34b1ecec707dfd4a2aa675f3756e092a17915144ea12d010"
+    },
+    {
+      "path": "DragonflyPlugins/CustomContextMenus-Plugin/manual.json",
+      "sha256": "2de54c7cf4b85c974382756c1f20f98cefcc15f3f9ce49e165d20fcd0b1a2f54"
+    },
+    {
+      "path": "DragonflyPlugins/CustomContextMenus-Plugin/manual_content.json",
+      "sha256": "fd2bc6383b390988a38e18a7f5467b9fddbe121c9a6a8f09aa7a39732f00a639"
+    },
+    {
+      "path": "DragonflyPlugins/DeconvolutionLab2-Plugin/manual.json",
+      "sha256": "39987d6a467310ffeff9fed3b0cc5df9264734609a4784e2344a41cedd6d31bd"
+    },
+    {
+      "path": "DragonflyPlugins/DECT-Zeff-Plugin/manual.json",
+      "sha256": "5e2ddf5b38bbbbfad752f403042083b0d9f4d092383a3f629c346e01e8794250"
+    },
+    {
+      "path": "DragonflyPlugins/DefDAP-Plugin/manual.json",
+      "sha256": "7a9a3581396df87645ef8aa6ffb2bb505abdea6646599efaf513ddce5f53bd18"
+    },
+    {
+      "path": "DragonflyPlugins/DLModelOrganizer-Plugin/manual.json",
+      "sha256": "2d51c647258623475b0eff6f18b545d8017c0b8506dd90ade1223548b27a490c"
+    },
+    {
+      "path": "DragonflyPlugins/DLModelOrganizer-Plugin/manual_content.json",
+      "sha256": "e121dd87887387683b29737336894ec4607c6fdae70c97c9d5893e72049ff1f4"
+    },
+    {
+      "path": "DragonflyPlugins/DragonflyPublications-Plugin/manual.json",
+      "sha256": "8efaa5b308e191c45cf9d772a46acd5eeeabd84a093f82a5c1cc7a9eae065c3d"
+    },
+    {
+      "path": "DragonflyPlugins/DragonflyPublications-Plugin/manual_content.json",
+      "sha256": "f2ea76415498a54a5bac6880e7ac27f1ae3c87baccdef9f8d63211e920b7227e"
+    },
+    {
+      "path": "DragonflyPlugins/Drift4D-Plugin/manual.json",
+      "sha256": "9c2d2846ab31c67f2cdb88495fae4aa1f2e705c2d83a8d61c3b541561900230e"
+    },
+    {
+      "path": "DragonflyPlugins/Drift4D-Plugin/manual_content.json",
+      "sha256": "1d55de60b310e7fd5368f959aabcdf42cd79c307d3390d36762c42da8f2f448f"
+    },
+    {
+      "path": "DragonflyPlugins/EBSD3D-Plugin/manual.json",
+      "sha256": "52f103ac1f857339b02a36070061e53dcce6d0d6d9a3c6678512bb0779ff96ba"
+    },
+    {
+      "path": "DragonflyPlugins/EBSD3D-Plugin/manual_content.json",
+      "sha256": "4c87a5f53f4aeff6e179c7ecfb7d6cc2ed6176305041cff795878c60536b8c4f"
+    },
+    {
+      "path": "DragonflyPlugins/Elastix-Plugin/manual.json",
+      "sha256": "ed37e219e9c6ddc06f0974457743e5210f2c36859ad352a434c1bc5b9a5203ec"
+    },
+    {
+      "path": "DragonflyPlugins/Elastix-Plugin/manual_content.json",
+      "sha256": "d9c9b76c42960ed394d99c88fbc3d641b1abc30b5376779fe90c880c75ebb98a"
+    },
+    {
+      "path": "DragonflyPlugins/FabioLoader-Plugin/manual.json",
+      "sha256": "dbe65ee8f3381c3a0ca31cbcd11f7a725229dcb42d52f4fb1aa93d0729df6caa"
+    },
+    {
+      "path": "DragonflyPlugins/FEniCSx-FEM-Plugin/manual.json",
+      "sha256": "b9e881f852ea981b5b57a3c3ea57616013926e85aa5a4594c3a5936b7b053d84"
+    },
+    {
+      "path": "DragonflyPlugins/FiberOrientation-Plugin/manual.json",
+      "sha256": "8393dc2a7318e1ddd2961314587e5dceff139c60296aef843a081246d865bc2f"
+    },
+    {
+      "path": "DragonflyPlugins/FiberROI-to-MultiROI-LargeVolume-Plugin/manual.json",
+      "sha256": "6f8965273926e01b01fd2061dffa47a76ea5ac1b3fa239c65641b96ac9794dcd"
+    },
+    {
+      "path": "DragonflyPlugins/FiberROI-to-MultiROI-Plugin/manual.json",
+      "sha256": "254df53ffb31d8da17e54afd9ad67e911cdb22b60b735436c9534df7fc091509"
+    },
+    {
+      "path": "DragonflyPlugins/FitPrimitiveShapes-Plugin/manual.json",
+      "sha256": "e8cac5d3d71294e9b9095ccc8bd3cbb95170c33305735d76e56ae1e1e3dc7ef7"
+    },
+    {
+      "path": "DragonflyPlugins/FullWorkflowCellpose-Plugin/manual.json",
+      "sha256": "8e03baf5e7ab291ca3fe73d84106b2c121b12f65cdebf22a2fafe40ffee97415"
+    },
+    {
+      "path": "DragonflyPlugins/FullWorkflowCellpose-Plugin/manual_content.json",
+      "sha256": "43e896300633e7e2553abfbfaa6c7f532801b7701fb8a319c05d0e4204ef1bbd"
+    },
+    {
+      "path": "DragonflyPlugins/GrainSizeTools-Plugin/manual.json",
+      "sha256": "9926bca906b001839c90680f315123ccad07c780089b4218ef72431d2c94e558"
+    },
+    {
+      "path": "DragonflyPlugins/Gsplat-Plugin/manual.json",
+      "sha256": "6c57319e3805eaea327e7da127ad92b4c84ba14cc2acbc12b6de78241424d794"
+    },
+    {
+      "path": "DragonflyPlugins/HalfHeightWidth-Plugin/manual.json",
+      "sha256": "aacc012ffe827d7a0d7b9194d3ca3291caaba926f4075fa1e4400b68c0b1c3d4"
+    },
+    {
+      "path": "DragonflyPlugins/HalfHeightWidth-Plugin/manual_content.json",
+      "sha256": "e4484a77ffd40833419e2f462b4cfb3d453e48890291a08c23066a133d9d4e7c"
+    },
+    {
+      "path": "DragonflyPlugins/HDF5ZarrLoader-Plugin/manual.json",
+      "sha256": "802e509c8c7b0fc607d14fca666942c133865aa21c2b493efc058b4baef5685f"
+    },
+    {
+      "path": "DragonflyPlugins/ImageExporter-Plugin/manual.json",
+      "sha256": "af2eb13d427c1ea5c73ce680c7e301c95666e29cc542c0cec2da0ad392da857b"
+    },
+    {
+      "path": "DragonflyPlugins/ImageExporter-Plugin/manual_content.json",
+      "sha256": "495b6e4da396f408dfac560f80a86cd1791f9b7bf063be2ce31a9a57d7df6c12"
+    },
+    {
+      "path": "DragonflyPlugins/ImageJ-Bridge-Plugin/manual.json",
+      "sha256": "56128b0a3af0532c97f9ce3747b1eaa263b57fdbe5c0647646d7f053f53fe43e"
+    },
+    {
+      "path": "DragonflyPlugins/ImageJ-Bridge-Plugin/manual_content.json",
+      "sha256": "8bb4f2c321ccfd8d889e13d669dbbc7027098e86654b55c32332f0f20cd3d31d"
+    },
+    {
+      "path": "DragonflyPlugins/ImageToStlWorkshop-Plugin/manual.json",
+      "sha256": "87104e762e0d63bf26f23cc1488eb433df0f2379228d5778bee6712c6d3ce4dc"
+    },
+    {
+      "path": "DragonflyPlugins/ImageToStlWorkshop-Plugin/manual_content.json",
+      "sha256": "668deab1b6f3a938a621009de7583dd08b5dcbc1e403ed89a4864e13e4d3a259"
+    },
+    {
+      "path": "DragonflyPlugins/ITKImageLoader-Plugin/manual.json",
+      "sha256": "15480375bed0561f5b5436b2923ce5a1799e19187013ab671aa643dba797ba48"
+    },
+    {
+      "path": "DragonflyPlugins/LabelClassifier-Plugin/manual.json",
+      "sha256": "0fa38ae287423233ab69fab2a96cf7e10104d1fce4ea51f48f7a434b524d0f60"
+    },
+    {
+      "path": "DragonflyPlugins/LabelClassifier-Plugin/manual_content.json",
+      "sha256": "1e87839c5d7999994299189f7d67dff1cc52eecb90f193969d56964c7bfedc98"
+    },
+    {
+      "path": "DragonflyPlugins/LoadSanyingCT-Plugin/manual.json",
+      "sha256": "76696956ea0677114e37ecd7c005705da83419304f4a9ee2a816dc5a2e404991"
+    },
+    {
+      "path": "DragonflyPlugins/LoadSanyingCT-Plugin/manual_content.json",
+      "sha256": "4d8f1d67e0835a7d834dcb4ea429cc47c7eda5c59509ada2aad7287d5bd07c2a"
+    },
+    {
+      "path": "DragonflyPlugins/LoadTXM-Plugin/manual.json",
+      "sha256": "fcf5726349d3aaeb568ad9965d7f7db1d98b77c7a7c5309d8225d6b58d082f88"
+    },
+    {
+      "path": "DragonflyPlugins/LoadTXM-Plugin/manual_content.json",
+      "sha256": "1fff00697f932a5ddcdbc5ef89d67923a6fe1bda1a1eb39bb3928fd2eafae0a1"
+    },
+    {
+      "path": "DragonflyPlugins/LocateAnything-Plugin/manual.json",
+      "sha256": "4ed5355d74e7f71b5cd14bbba52b87b8a002ad3e56121223a077824f75d79dd7"
+    },
+    {
+      "path": "DragonflyPlugins/LocateAnything-Train-Plugin/manual.json",
+      "sha256": "b3976afa87caeda50fa33c37dd43d3f7ce8710fdd04cd046d2dadf87e867a049"
+    },
+    {
+      "path": "DragonflyPlugins/MCIB3D-Plugin/manual.json",
+      "sha256": "9f60a9a0a38490552a58b896580b00671aee299f4110f3a638a0178f61917c24"
+    },
+    {
+      "path": "DragonflyPlugins/MeasurementQA-Plugin/manual.json",
+      "sha256": "d9a7a8caf003ff1a8eb4e3aee5cba4c73e618aca091f27e4a03c21bf3e132a8c"
+    },
+    {
+      "path": "DragonflyPlugins/MeasurementQA-Plugin/manual_content.json",
+      "sha256": "57d5fb492de6588120fe83072b6efe2d6ffdd1791184676ae7a652b8c934272a"
+    },
+    {
+      "path": "DragonflyPlugins/MeshQualityPrintability-Plugin/manual.json",
+      "sha256": "c750a0869c531f27d41ef2d7c780ba08d5731f0d1a5a99bd228ed35ca2ce57ad"
+    },
+    {
+      "path": "DragonflyPlugins/MeshQualityPrintability-Plugin/manual_content.json",
+      "sha256": "577b60a14135a95149d670a0fe53a6ca936494da1ec67d40e58d779adb610133"
+    },
+    {
+      "path": "DragonflyPlugins/MeshReport-Plugin/manual.json",
+      "sha256": "0b6722fa906c4db1e9d24f81ec4b4f7bab16e499f57da76db34695b345005e59"
+    },
+    {
+      "path": "DragonflyPlugins/MeshReport-Plugin/manual_content.json",
+      "sha256": "f2f8e6159382d57922968e3b4cd6023de68cc9075b2ae64a3ff2aecdfcf531b6"
+    },
+    {
+      "path": "DragonflyPlugins/Meshroom-Plugin/manual.json",
+      "sha256": "80960c822a013afafaca2f7ac7a216368406e86574650f9aba76350f0bef490d"
+    },
+    {
+      "path": "DragonflyPlugins/MeshToCAD-Plugin/manual.json",
+      "sha256": "4d9784c916f03483040c4a5e74f07aba7d7b74c339f6301b9d849dafbdff59ae"
+    },
+    {
+      "path": "DragonflyPlugins/MicrostructureRVE-Plugin/manual.json",
+      "sha256": "9165fcf601bb9cd555882c2b2268c31981018c676db0f5298c28b809adf97854"
+    },
+    {
+      "path": "DragonflyPlugins/MicrostructureRVE-Plugin/manual_content.json",
+      "sha256": "02babca0979b5d3b10f6539c4a282134202507625b77e5d63907666f4f57c640"
+    },
+    {
+      "path": "DragonflyPlugins/MiCSegQA-Plugin/manual.json",
+      "sha256": "e2a296076b29133372b787b7e3761dbd167b71b83583b6973617273b54e4f239"
+    },
+    {
+      "path": "DragonflyPlugins/MiCSegQA-Plugin/manual_content.json",
+      "sha256": "e6ded0ab710f9d4581d05ea9032855638d16bf41544e3b23b5135a784bd05394"
+    },
+    {
+      "path": "DragonflyPlugins/MONAILabel-Plugin/manual.json",
+      "sha256": "236998a0b10129f62835911507b3199f88e2b6273755d9a8c56c3115936716dc"
+    },
+    {
+      "path": "DragonflyPlugins/MorphoLibJ-Python-Plugin/manual.json",
+      "sha256": "397ba8b0bdcb1bbc535f97a1e44de55f8d52f559c7bc456656e2d1eff15e3121"
+    },
+    {
+      "path": "DragonflyPlugins/MorphoLibJ-via-Fiji-Plugin/manual.json",
+      "sha256": "805f60e503046b727c5a794ad08c3c2a9ae3c4f3b43ff193f3cd7a5ace858c2a"
+    },
+    {
+      "path": "DragonflyPlugins/muDIC-Plugin/manual.json",
+      "sha256": "99aed4365ef774ef3aa5594c9bcd68af13923bc9ae8634ed0cd8664ccd0c00f4"
+    },
+    {
+      "path": "DragonflyPlugins/MultiROIExport-Plugin/manual.json",
+      "sha256": "e21a1ecc235d694836741f559e69035da335575aaf7a24c88de46c7c7a406f8e"
+    },
+    {
+      "path": "DragonflyPlugins/MultiROIExport-Plugin/manual_content.json",
+      "sha256": "9bd09cf39c606e2a3f014c2e6edf01586b014efdd54dc18de8d620dfcdf9b12f"
+    },
+    {
+      "path": "DragonflyPlugins/MultiROIToMultiMesh-Plugin/manual.json",
+      "sha256": "1418b2b913e9fb7af6ac960e35e0ba432252773a64972f11f5d4a51effa59447"
+    },
+    {
+      "path": "DragonflyPlugins/MultiROIToMultiMesh-Plugin/manual_content.json",
+      "sha256": "982feb076334673ef96feb09732641d6059651516c3965a62595261f3a63907a"
+    },
+    {
+      "path": "DragonflyPlugins/nnUNet-Plugin/manual.json",
+      "sha256": "7e5cb207bb4a425f7a77a948259e3b34e688ad45094a850ebf931cd6b1085bf8"
+    },
+    {
+      "path": "DragonflyPlugins/NominalActualWorkshop-Plugin/manual.json",
+      "sha256": "3884f7737a5acb638f3463cff258d7fcd7b47b829b4c8f0cbf8623e476c8fe24"
+    },
+    {
+      "path": "DragonflyPlugins/NominalActualWorkshop-Plugin/manual_content.json",
+      "sha256": "c20cbc284ffdbc710843210c9fa2bb4002349e1dc5a4ffe08d7e87879ba30f7e"
+    },
+    {
+      "path": "DragonflyPlugins/ObsidianHelpVault-Plugin/manual.json",
+      "sha256": "b5f7290aa75911df33fc9ef0ab1a5b918054362f4563c8faec357e6cc0f699c4"
+    },
+    {
+      "path": "DragonflyPlugins/Open3D-Plugin/manual.json",
+      "sha256": "d537d3edf8507c103efc0ca13b2b3d58d60c8e2931f3080b59fd504303a44c64"
+    },
+    {
+      "path": "DragonflyPlugins/OpenFiberSeg-FiberSeparation-Plugin/manual.json",
+      "sha256": "14555ebe63c502aa6f4302bc08cfc5c942d4093d5ce503956f17e9eed680df3c"
+    },
+    {
+      "path": "DragonflyPlugins/OpenFOAM-CFD-Plugin/manual.json",
+      "sha256": "cac7d8f0a54a49e0f612d8e56e7561af908c85da2f657babdde7fee3ba59d816"
+    },
+    {
+      "path": "DragonflyPlugins/OpticalMetallography3D-Plugin/manual.json",
+      "sha256": "b356779dd35f3de6031387855ff70d3324e3ecc80777d3f6ca3c0d230191ec39"
+    },
+    {
+      "path": "DragonflyPlugins/OpticalMetallography3D-Plugin/manual_content.json",
+      "sha256": "a734d7caa423788e996bfdb8573b13c4255ef893cc39b620d084dace8e8ed439"
+    },
+    {
+      "path": "DragonflyPlugins/orix-Plugin/manual.json",
+      "sha256": "0228c5805ae733de1eb649e738e5e9e2e371c88ab911c4e6d7df1f128b869932"
+    },
+    {
+      "path": "DragonflyPlugins/OverallMeasurements-Plugin/manual.json",
+      "sha256": "f8960af68e7df279dea4b9d2769431be507a0f94721749ce87f4ecd71ba91d28"
+    },
+    {
+      "path": "DragonflyPlugins/ParticleSizeWorkshop-Plugin/manual.json",
+      "sha256": "35322e4dc71d4e3fa90a90861b340e46d485ef6a77a679509cef71b3d9ff5fdf"
+    },
+    {
+      "path": "DragonflyPlugins/ParticleSizeWorkshop-Plugin/manual_content.json",
+      "sha256": "2f275602cf424a7357953b08da79227881c09ba19c523abf0feda52aafc1f75d"
+    },
+    {
+      "path": "DragonflyPlugins/PersistentHomology3D-Plugin/manual.json",
+      "sha256": "84c932a1aab1cbeaf27c224d5e546a5779fda0c730481b8d86f276661cd30be1"
+    },
+    {
+      "path": "DragonflyPlugins/PersistentHomology3D-Plugin/manual_content.json",
+      "sha256": "fba515346270f8b3d83acaf10b7788f451c5d46ebcc62dd3381d0f9f9d6c7593"
+    },
+    {
+      "path": "DragonflyPlugins/PIVFlowField-Plugin/manual.json",
+      "sha256": "748a46737329d569f9bf47e17e92d8deac9283dbd58912f3085ab50235efad69"
+    },
+    {
+      "path": "DragonflyPlugins/PIVFlowField-Plugin/manual_content.json",
+      "sha256": "94b3f63cab20da4d924e91d9c2189f43acd63fa9e847ee7560a8efbb026217bc"
+    },
+    {
+      "path": "DragonflyPlugins/PoresToSurface-Plugin/manual.json",
+      "sha256": "148d07539770df5de9e1a2c820fc5d9d6e1b269c5263782359083a63ad1395df"
+    },
+    {
+      "path": "DragonflyPlugins/PoresToSurface-Plugin/manual_content.json",
+      "sha256": "feb83850da04e8c73e87dcc5bc4073ff20542cfc8f70173c33b1fb76d07a092f"
+    },
+    {
+      "path": "DragonflyPlugins/PorosityConfidence-Plugin/manual.json",
+      "sha256": "1fc0f67af1e39f81f05f1fbf206c8786c5ef287f8740a23823fec942fa12e6ae"
+    },
+    {
+      "path": "DragonflyPlugins/PorosityConfidence-Plugin/manual_content.json",
+      "sha256": "da6e0bfa0f6cd0487770b9f0ac419168d96ac5f387e86054a72bb65ad35643d6"
+    },
+    {
+      "path": "DragonflyPlugins/PorosityWorkshop-Plugin/manual.json",
+      "sha256": "5a1cd3c50195b665d563873c42f679a12619f62654a8a8042ac5d6d5b0ea2d83"
+    },
+    {
+      "path": "DragonflyPlugins/PorosityWorkshop-Plugin/manual_content.json",
+      "sha256": "32ec4ebfe2bd8e5376f355ea5b9f9d50fe41a9cd7243efa6f363e4d40d0470c3"
+    },
+    {
+      "path": "DragonflyPlugins/PrototypeAppsMenu-Plugin/manual.json",
+      "sha256": "5534e1d66358aa3734efd9d3752fc3cf62e59beb050d295132c47c98a45510e7"
+    },
+    {
+      "path": "DragonflyPlugins/PrototypeAppsMenu-Plugin/manual_content.json",
+      "sha256": "6bc97574e0d05b9c700c04b3b7d5c9e8db194a145ef40e90c232cb093bff96bb"
+    },
+    {
+      "path": "DragonflyPlugins/pyclesperanto-Plugin/manual.json",
+      "sha256": "b83f3777c1457afcfa4f37e1c3f943c7bea73cf48be5ebb1ac34be342e79e4dd"
+    },
+    {
+      "path": "DragonflyPlugins/PyMeshLab-Plugin/manual.json",
+      "sha256": "4b555ef3c076c768ff4533c8fd3464aa2c57824f3437f9dda40f58be6a8ea9b8"
+    },
+    {
+      "path": "DragonflyPlugins/QuantImPy-Plugin/manual.json",
+      "sha256": "53837de71f35f3e661e8837b9e70ccf71d40581adb87e0fa86cda53cec122b1e"
+    },
+    {
+      "path": "DragonflyPlugins/RecentAppsHighlighter-Plugin/manual.json",
+      "sha256": "1f3d1f65b3a1d259fc82c3620b441272b0f14d3b8c359c6689b9c3b2f9962c21"
+    },
+    {
+      "path": "DragonflyPlugins/RecentAppsHighlighter-Plugin/manual_content.json",
+      "sha256": "6e3bf0546b32c36901511ddb5a77e9a7e059c508efa77c9317d322c6ab9dd0e8"
+    },
+    {
+      "path": "DragonflyPlugins/RecipeExecutor-Plugin/manual.json",
+      "sha256": "c5a372a7415db2705a171191045cab864a2e31173b54bd52b89b4d31d339c448"
+    },
+    {
+      "path": "DragonflyPlugins/RedLionfish-Plugin/manual.json",
+      "sha256": "6ce4d24d109ee541ebca041bd8604db2881dc1c94ae6bddd795d957cf5038560"
+    },
+    {
+      "path": "DragonflyPlugins/RemoteDLInferring-Plugin/manual.json",
+      "sha256": "705056c4f5ab92b79808234e9870665ddddc897c6d0a3abc313e5e39a1c32eee"
+    },
+    {
+      "path": "DragonflyPlugins/RemoteDLTraining-Plugin/manual.json",
+      "sha256": "dd9908b528053462f2f355d01d3767471e38150215c37714ed572f4a5d17b591"
+    },
+    {
+      "path": "DragonflyPlugins/RidgeDetection-Plugin/manual.json",
+      "sha256": "b1960b87e40b6ee7c87d00638a9cf40af733e7dc50c9b181038c15f2bab6c6bd"
+    },
+    {
+      "path": "DragonflyPlugins/ROI-to-MultiROI-SNOW-Plugin/manual.json",
+      "sha256": "1d7ced1f29afc002412c8b3ab4424dc5f6c696d483149d5d9ca8beb17638560b"
+    },
+    {
+      "path": "DragonflyPlugins/RotationalViews-Plugin/manual.json",
+      "sha256": "c2ba4d96127c2f2994c567b31f115d1c9fd0c1f5fb8d1365bc5688933815a62f"
+    },
+    {
+      "path": "DragonflyPlugins/RotationalViews-Plugin/manual_content.json",
+      "sha256": "989c467f400d97c5c79b3547f0a6ac591f818bbcd3477dec5c1cf0a37196cd79"
+    },
+    {
+      "path": "DragonflyPlugins/SAM3D-Plugin/manual.json",
+      "sha256": "5dabe1185442f3c4551bfd9f7ec15530cb568501d283deb50482188baa94084a"
+    },
+    {
+      "path": "DragonflyPlugins/SCRFD-Plugin/manual.json",
+      "sha256": "78b472199c26f41cabba2a7dba3550b83c5b172c385cf9ab23b449fd5313a773"
+    },
+    {
+      "path": "DragonflyPlugins/ShapeDistance-Plugin/manual.json",
+      "sha256": "92e1302ab72a3a769858e2d12571e12908c88c7d6df9162ca8172cce72273301"
+    },
+    {
+      "path": "DragonflyPlugins/ShapeDistance-Plugin/manual_content.json",
+      "sha256": "640d1e61929dd955362910284013a38e78fb8688d6d5d174b21217bc9e91e737"
+    },
+    {
+      "path": "DragonflyPlugins/ShowConnections-Plugin/manual.json",
+      "sha256": "b45ab938c82aa429895504dc01f5d3b036735d4d23e095b475d720fcb1c853ee"
+    },
+    {
+      "path": "DragonflyPlugins/ShowConnections-Plugin/manual_content.json",
+      "sha256": "5c60176a48ab5c5fbdf78250fe94709da249101edc264ef940b75307938a5285"
+    },
+    {
+      "path": "DragonflyPlugins/Skan-Plugin/manual.json",
+      "sha256": "4665ac07773c52fb2305551360916ffff5fdf4defdf52708ca0d473957c29e8e"
+    },
+    {
+      "path": "DragonflyPlugins/SliceRegistrationNonRigid-Plugin/manual.json",
+      "sha256": "ba009380c0e75227e99465d5fae396d44e9205044f63f7ee9125460fec0debd1"
+    },
+    {
+      "path": "DragonflyPlugins/SPAM-DVC-DF3W-Plugin/manual.json",
+      "sha256": "202814a1ea0a04d7575b4f8f2698f1806d2a64e89e4b20f319e027eb903f5184"
+    },
+    {
+      "path": "DragonflyPlugins/spotiflow-Plugin/manual.json",
+      "sha256": "a90910a1920cb1314c12e7dfcb249d90b1afea874158d4d3eca57b99e1e59f08"
+    },
+    {
+      "path": "DragonflyPlugins/StlToImageWorkshop-Plugin/manual.json",
+      "sha256": "c4076565477cee80e8ea655607b79e55c03d9e89100c25510f8ae3f398072c3e"
+    },
+    {
+      "path": "DragonflyPlugins/StlToImageWorkshop-Plugin/manual_content.json",
+      "sha256": "02797f879e5694ff2b2e56df3576e565665adf6a9503f08ea4f2a7d47290dd59"
+    },
+    {
+      "path": "DragonflyPlugins/SyntheticRVE-Plugin/manual.json",
+      "sha256": "2446de2b48bd3b6ea8a03d4e418219f6e46c5e85cb874f6aecf7c941d7a8038b"
+    },
+    {
+      "path": "DragonflyPlugins/SyntheticRVE-Plugin/manual_content.json",
+      "sha256": "47726e0e72b53b70d8fac2c18b479876fb6c6441ecf56fa1400de92a0da6651a"
+    },
+    {
+      "path": "DragonflyPlugins/TauFactor-Plugin/manual.json",
+      "sha256": "1684b9ea3a383e1ca0211d2c7b2b439b018d958636f01b5dabe579cf23aec79f"
+    },
+    {
+      "path": "DragonflyPlugins/TomoRecon-Plugin/manual.json",
+      "sha256": "8afb797bec79475cd14e22b3943aaf2e873507a8ecb400687960022444f0767f"
+    },
+    {
+      "path": "DragonflyPlugins/TrackMate-Dragonfly-Plugin/manual.json",
+      "sha256": "4a55c1ec4b91ad89f2cae900c73c59c068ed6d98e35efb3e34d984581b465ca6"
+    },
+    {
+      "path": "DragonflyPlugins/TxrmMbirjax-Plugin/manual.json",
+      "sha256": "0e2903620f9b5b440ac4aeb6254a2d052921463b30390a0bba45e977388d4e31"
+    },
+    {
+      "path": "DragonflyPlugins/TxrmMbirjax-Plugin/manual_content.json",
+      "sha256": "3a4e8fa994897c16d694a080d148879f792f2a0c0e51831006d7f636a1706f5d"
+    },
+    {
+      "path": "DragonflyPlugins/VertexMeasurements-Plugin/manual.json",
+      "sha256": "2bde5307c55bc3a81b6a9e1ef9fe4963b84334c7464578d10cb31f91a0aa427d"
+    },
+    {
+      "path": "DragonflyPlugins/VesselMorphometry-Plugin/manual.json",
+      "sha256": "06dff6b01329c2f0ab85e2d36dd0de6c2be67243385025f01027ef5b9295a71b"
+    },
+    {
+      "path": "DragonflyPlugins/VesselMorphometry-Plugin/manual_content.json",
+      "sha256": "9c68252ceaaffce5580f3f6f3488127852d6bb514c51dd972178d7bb102ca703"
+    },
+    {
+      "path": "DragonflyPlugins/ViewRangeFraction-Plugin/manual.json",
+      "sha256": "3c230ce052a4fcc47ed1077eff0346e7066ccbbc7759169484fc0640d66d0fb4"
+    },
+    {
+      "path": "DragonflyPlugins/ViewRangeFraction-Plugin/manual_content.json",
+      "sha256": "469608016bb2064d32a4e94185fe3c887825f5d6d0ae730d54f75fa090bc2819"
+    },
+    {
+      "path": "DragonflyPlugins/vmtk-Plugin/manual.json",
+      "sha256": "3a4d13b5ba9a1a9b236c9a9ec7189cc2ea597a6884b330300ee4711b2c01f9f6"
+    },
+    {
+      "path": "DragonflyPlugins/WorkLogGenerator-Plugin/manual.json",
+      "sha256": "1f6dba78616d9be8001e7a7b32c733662f4f03c36d80c37a0f91154a84ba9c8e"
+    },
+    {
+      "path": "DragonflyPlugins/WorkLogGenerator-Plugin/manual_content.json",
+      "sha256": "a6c2888aa11965aa072ca2487e17dd9d1d88dd066c3b1b46930e70bd8da7bdde"
+    },
+    {
+      "path": "DragonflyPlugins/ZStack2D-Stitcher-Plugin/manual.json",
+      "sha256": "e7f5dbbc87b19cc657bba1af9bd89e9ab5cf49585a2848b90dc3bd163d7bbeab"
+    }
+  ]
+}

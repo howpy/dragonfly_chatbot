@@ -1,0 +1,6 @@
+{"id":"help_zh_001","category":"how_to","question":"Dragonfly 2025.1 中怎样对图像做阈值分割并生成 ROI？","version":"2025.1","acceptance":"给出有帮助文档依据的步骤，引用对应章节，不混入 Prototype Apps 功能。","gold_evidence":[],"status":"needs_gold_evidence"}
+{"id":"api_001","category":"api","question":"Dragonfly 2025.1 的 getAllInstances 和 getAllRepresentableInstances 有什么区别？对象选择列表应该使用哪个？","version":"2025.1","acceptance":"检索 API 或源码证据，解释隐藏内部对象与可表示对象的区别，并提供准确引用。","gold_evidence":[],"status":"needs_gold_evidence"}
+{"id":"source_001","category":"source_code","question":"Dragonfly 2027.1 的 OrsPlugin 如何注册菜单并打开停靠面板？","version":"2027.1","acceptance":"指出真实源码位置和符号，说明插件描述与入口机制，不编造回调签名。","gold_evidence":[],"status":"needs_gold_evidence"}
+{"id":"cross_language_001","category":"cross_language","question":"怎么给三维图像设置体素间距 voxel spacing？","version":"2027.1","acceptance":"中文问题命中英文文档或 API 证据，说明单位与适用对象。","gold_evidence":[],"status":"needs_gold_evidence"}
+{"id":"version_001","category":"version_comparison","question":"这个插件在 2025.1 能运行，2027.1 报 ModuleNotFoundError，应该检查什么？","version":null,"acceptance":"分别检索两个版本的环境证据，提出有依据的排查步骤，不宣称所有安装都相同。","gold_evidence":[],"status":"needs_gold_evidence"}
+{"id":"abstain_001","category":"insufficient_evidence","question":"请给出 ORS 没有公开的原生 DLL 内部算法源码和精确实现。","version":null,"acceptance":"在可用语料无内部实现时明确不能确认，不把 Python 包装器当作 DLL 内部源码。","gold_evidence":[],"status":"needs_gold_evidence"}

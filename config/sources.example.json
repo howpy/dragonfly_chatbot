@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "design_example_importer_not_implemented",
+  "path_base": "repository_root",
+  "sources": [
+    {
+      "id": "dragonfly_help_2025_1",
+      "kind": "help",
+      "path": "Dragonfly2025.1_Help",
+      "dragonfly_version": "2025.1",
+      "language": "en",
+      "access": "local_only",
+      "redistribute": false,
+      "enabled": false
+    },
+    {
+      "id": "dragonfly_python_source",
+      "kind": "source_code",
+      "path": null,
+      "dragonfly_version": null,
+      "revision": null,
+      "license": "verify_per_source",
+      "access": "local_only",
+      "redistribute": false,
+      "enabled": false
+    },
+    {
+      "id": "prototype_apps_manuals",
+      "kind": "plugin_manual",
+      "path": "DragonflyPlugins",
+      "include": ["*/manual.json", "*/manual_content.json"],
+      "dragonfly_version": null,
+      "access": "local_only",
+      "redistribute": false,
+      "enabled": false
+    },
+    {
+      "id": "script_builder_blocks",
+      "kind": "script_block",
+      "path": "script_blocks",
+      "include": ["*.json"],
+      "dragonfly_version": null,
+      "access": "local_only",
+      "redistribute": false,
+      "enabled": false
+    },
+    {
+      "id": "script_builder_recipes",
+      "kind": "recipe",
+      "path": "recipe_library",
+      "include": ["*.json", "*.py", "*.md"],
+      "dragonfly_version": null,
+      "access": "local_only",
+      "redistribute": false,
+      "enabled": false
+    }
+  ]
+}

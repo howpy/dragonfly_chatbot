@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "source_id": "dragonfly_chatbot_notes",
+      "path": "published_objects.md",
+      "title": "Published Dragonfly objects in plugin object pickers / 对象选择列表",
+      "version": null,
+      "kind": "technical_note",
+      "text": "Project engineering note: Object selection lists should enumerate Class.getAllRepresentableInstances().\ngetAllInstances() can include internal or intermediate objects hidden by Dragonfly's own object list.\nFor a user-facing list of Channels, ROIs, MultiROIs or Meshes, use the representable instances API.\ngetAllInstances() remains useful for resolving a previously chosen GUID or housekeeping that intentionally sees all objects.\nThis note reflects Prototype Labs engineering guidance; check the installed version's Python API before copying code.\n中文：插件对象选择列表应使用 getAllRepresentableInstances()，避免把隐藏的内部对象列给用户。"
+    },
+    {
+      "source_id": "dragonfly_chatbot_notes",
+      "path": "python_source_boundary.md",
+      "title": "Python source inspection versus native implementation / 源码查询边界",
+      "version": null,
+      "kind": "technical_note",
+      "text": "Readable Python modules can explain wrappers, plugin menus and Python-side UI behavior.\nA call ending in a compiled .pyd or .dll does not expose the native implementation.\nReport the visible interface and the boundary; do not invent the hidden algorithm.\nSeparate the installed version's Help, Python source and example scripts in the knowledge corpus.\nLocally readable source does not establish redistribution permission. Import authorized local files into a user-owned corpus.\n中文：查询 Dragonfly 源码时，应说明 Python 包装层与原生编译代码的边界，并标记资料版本。"
+    },
+    {
+      "source_id": "dragonfly_chatbot_notes",
+      "path": "external_python_environment.md",
+      "title": "External Python environment diagnostics / 外部 Python 环境排错",
+      "version": null,
+      "kind": "technical_note",
+      "text": "When a plugin launches an external Python interpreter, inspect inherited PYTHONHOME and PYTHONPATH.\nThose variables can point the external interpreter at a different Python version's standard library.\nErrors such as SRE module mismatch can be an environment contamination symptom rather than a missing package.\nProbe a candidate interpreter for venv, ensurepip, pyexpat and pip before choosing it as a venv base.\nCheck each plugin's documented Python and wheel support; the base version need not match Dragonfly when computation runs in a separate process.\nThese are diagnostics, not a universal fix; obtain version-specific evidence before prescribing a concrete interpreter.\n中文：外部 Python 报错时检查继承的环境变量、基础解释器功能和该插件的依赖兼容性。"
+    }
+  ]
+}
